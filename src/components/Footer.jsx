@@ -19,7 +19,7 @@ function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {/* Logo and Description */}
                         <div className="md:col-span-1">
-                            <img src={brand} alt="AI-StarUP Logo" className="w-16 h-16 mb-4" />
+                            <img src={brand} alt="AI-StarUP Logo" className="w-16 h-16 mb-4" loading="lazy" />
                             <p className="text-sm text-gray-400">
                                 Butun dunyo bo'ylab ishlanuvchilarga AI quvvatli yordam bilan kodlashni inqilob qilish.
                             </p>

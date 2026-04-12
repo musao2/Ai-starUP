@@ -33,7 +33,7 @@ function Contact() {
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full">
                   <div className="flex-shrink-0 group hover:scale-110 transition-transform duration-300">
                     <div className="rounded-full border-2 border-cyan-300 p-1 shadow-[0_10px_30px_rgba(0,255,255,0.35)] group-hover:shadow-[0_15px_50px_rgba(0,255,255,0.5)] transition-all duration-300">
-                      <img src={HeroImg} alt="Amaka Micheal" className="h-40 w-40 rounded-full object-cover" />
+                      <img src={HeroImg} alt="Amaka Micheal" className="h-40 w-40 rounded-full object-cover" loading="lazy" />
                     </div>
                   </div>
 

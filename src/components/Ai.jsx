@@ -49,6 +49,7 @@ export default function Ai() {
       setAnswer(text || "Javob topilmadi ❌");
 
     } catch (err) {
+      console.error('API error:', err);
       setAnswer("Xatolik yuz berdi ❌");
     }
 

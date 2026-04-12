@@ -35,7 +35,7 @@ function Hero() {
                     </div>
                 </div>
                 <div className='animate-slide-in-right hover:scale-105 transition-transform duration-500 max-w-xl w-full'>
-                    <img src={Global} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.3)] w-full h-auto' />
+                    <img src={Global} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.3)] w-full h-auto' loading="lazy" />
                 </div>
             </section>
         </>

@@ -34,7 +34,7 @@ function AiMarketing() {
                     </div>
 
                     <div className="animate-slide-in-right hover:scale-110 transition-transform duration-500 max-w-md">
-                        <img src={Kvadrat} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]' />
+                        <img src={Kvadrat} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]' loading="lazy" />
                     </div>
                 </section>
             </section>

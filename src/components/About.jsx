@@ -13,7 +13,7 @@ function About() {
             >
                 <section className="px-6 md:px-12 lg:px-20 bg-black flex flex-col lg:flex-row justify-between items-center gap-10 pt-12 md:pt-16">
                     <div className="animate-slide-in-left hover:scale-110 transition-transform duration-500">
-                        <img src={Dumaloq} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]' />
+                        <img src={Dumaloq} alt="" className='drop-shadow-[0_0_30px_rgba(0,240,255,0.2)]' loading="lazy" />
                     </div>
                     <div className="text-white flex flex-col gap-8 animate-slide-in-right max-w-3xl">
                         <h2 className='text-4xl md:text-5xl text-white transition-all duration-300 hover:scale-105'>

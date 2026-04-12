@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
+// eslint-disable-next-line react-refresh/only-export-components
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -14,7 +15,12 @@ export const AuthProvider = ({ children }) => {
     // Check if user is logged in from localStorage
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (error) {
+        console.error('Error parsing stored user:', error);
+        localStorage.removeItem('user');
+      }
     }
     setLoading(false);
   }, []);

@@ -15,7 +15,7 @@ function GetStarted() {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left - Image */}
             <div className="flex justify-center order-first md:order-first animate-slide-in-left hover:scale-110 transition-transform duration-500">
-              <img src={Dumaloq} alt="shape" className="h-64 w-64 md:h-80 md:w-80 rounded-full object-cover shadow-lg drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]" />
+              <img src={Dumaloq} alt="shape" className="h-64 w-64 md:h-80 md:w-80 rounded-full object-cover shadow-lg drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]" loading="lazy" />
             </div>
 
             {/* Right - Content */}
