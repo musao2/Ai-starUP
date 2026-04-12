@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @keyframes footerTextReveal {
   0% { opacity: 0; transform: translateY(10px) scale(0.98); color: rgba(255,255,255,0.7); }
