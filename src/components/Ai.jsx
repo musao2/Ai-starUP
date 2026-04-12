@@ -13,17 +13,47 @@ export default function Ai() {
     "How does blockchain work?",
   ];
 
-  const handleSend = () => {
+  // 🔥 FAQAT SHU FUNKSIYA O'ZGARDI
+  const handleSend = async () => {
     if (!question.trim()) return;
 
     setIsAsking(true);
+    try {
+      const res = await fetch(
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=AIzaSyDJlIwGErxjWVpF2BPtE9QZ9EBg3QzPZtw",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  { text: question }
+                ]
+              }
+            ]
+          }),
+        }
+      );
 
-    // demo answer (keyin API ulaysan)
-    setTimeout(() => {
-      setAnswer(`AI: "${question}" haqida tushuntirish (demo javob)`);
-      setIsAsking(false);
-      setQuestion("");
-    }, 1500);
+      const data = await res.json();
+      console.log("STATUS:", res.status);
+      console.log("DATA:", data);
+      console.log("FULL RESPONSE:", data);
+
+      const text =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+      setAnswer(text || "Javob topilmadi ❌");
+
+    } catch (err) {
+      setAnswer("Xatolik yuz berdi ❌");
+    }
+
+    setIsAsking(false);
+    setQuestion("");
   };
 
   const handleSuggestionClick = (suggestion) => {
@@ -31,12 +61,12 @@ export default function Ai() {
   };
 
   return (
-    <div className="size-full flex items-center justify-center p-8 h-screen bg-black">
+    <div className="size-full flex items-center justify-center p-4 md:p-8 h-screen bg-black">
       <div className="w-full max-w-4xl">
 
         {/* Title */}
         <h1
-          className="text-center mb-10 text-5xl"
+          className="text-center mb-10 text-3xl md:text-5xl"
           style={{
             color: "#fff",
             textShadow:
@@ -54,7 +84,7 @@ export default function Ai() {
             onChange={(e) => setQuestion(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder="Savolingizni yozing..."
-            className="w-full px-6 py-5 pr-36 rounded-2xl text-white"
+            className="w-full px-4 md:px-6 py-3 md:py-5 pr-20 md:pr-36 rounded-2xl text-white"
             style={{
               backgroundColor: "rgba(0,0,0,0.8)",
               border: "1px solid rgba(0,240,255,0.3)",
@@ -64,7 +94,7 @@ export default function Ai() {
           <button
             onClick={handleSend}
             disabled={!question.trim() || isAsking}
-            className="absolute right-3 top-1/2 -translate-y-1/2 px-6 py-3 rounded-xl text-white"
+            className="absolute right-3 top-1/2 -translate-y-1/2 px-4 py-2 md:px-6 md:py-3 rounded-xl text-white"
             style={{
               background:
                 "linear-gradient(135deg,#00F0FF,#5200FF,#FF2DF7)",

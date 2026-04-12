@@ -21,15 +21,15 @@ function GetStarted() {
             {/* Right - Content */}
             <div className="flex flex-col gap-6 order-last md:order-last animate-slide-in-right">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold hover:scale-105 transition-transform duration-300">
-                Get exponential reach
+                Ekspontsial kodlash kuchini oling
                 <br />
-                <span className="text-white">via AI Marketing</span>
+                <span className="text-white">AI Yordamchi orqali</span>
               </h1>
 
               <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center">
                 <input
                   type="email"
-                  placeholder="Enter your work email"
+                  placeholder="Ish elektron pochtangizni kiriting"
                   className="flex-1 px-6 py-3 rounded-full bg-white/20 border border-white/40 text-white placeholder-white/60 focus:outline-none focus:border-cyan-300 focus:shadow-lg focus:shadow-cyan-400/30 transition-all duration-300"
                 />
                 <button className="px-8 py-3 rounded-full bg-black text-white font-semibold hover:bg-white/20 hover:shadow-lg hover:shadow-white/20 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap group">

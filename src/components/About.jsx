@@ -17,15 +17,15 @@ function About() {
                     </div>
                     <div className="text-white flex flex-col gap-8 animate-slide-in-right max-w-3xl">
                         <h2 className='text-4xl md:text-5xl text-white transition-all duration-300 hover:scale-105'>
-                            <span className='bg-gradient-to-r from-[#00F0FF] via-[#5200FF] to-[#FF2DF7] bg-clip-text text-transparent animate-pulse'>AI Marketing.</span>
+                            <span className='bg-gradient-to-r from-[#00F0FF] via-[#5200FF] to-[#FF2DF7] bg-clip-text text-transparent animate-pulse'>AI Yordamchi.</span>
                             <br />
-                            <span>Optimized Reach.</span>
+                            <span>Aqlli Kodlash Hamkori.</span>
                         </h2>
-                        <p className="transition-opacity duration-300 hover:opacity-80">DOML is a digital media agency powered by AI technology providing real time, <br /> <span className="text-[#0075FF]">data-driven insights</span> on your business and audience. <br /> The mission of DOML is to create the best experiences for <br /> companies through intelligent insights, powerful analytics and <span className="text-[#0075FF]">strategic execution.</span></p>
+                        <p className="transition-opacity duration-300 hover:opacity-80">CodesAi - bu ishlanuvchilarga yaxshiroq kod yozishda tezroq yordam berish uchun mo'ljallangan aqlli AI quvvatli yordamchi. Murakkab tushunchalarni tushuntirishdan tortib kod parchalarini yaratishga, xatolarni tuzatishga va eng yaxshi amaliyotlarni taqdim etishgacha, bizning AI hamkorimiz barcha dasturlash ehtiyojlaringiz uchun sizning asosiy vositangizdir. <br /> Kodlash kelajagini <span className="text-[#0075FF]">real vaqtda AI yordami</span> bilan his qiling, u sizning ish oqimingizga moslashadi. <br /> Minglab ishlanuvchilarga qo'shiling, ular o'zlarining kodlash tajribalarini <span className="text-[#0075FF]">aqlli avtomatlashtirish va mutaxassis rahbarlik</span> bilan o'zgartirdilar.</p>
                         <span className="block w-[135px] h-[2px] bg-gradient-to-r from-[#00F0FF] via-[#5200FF] to-[#FF2DF7] animate-gradient"></span>
                         <div className="inline-flex p-[1.5px] rounded-xl bg-gradient-to-r from-[#00F0FF] via-[#5200FF] to-[#FF2DF7] w-fit hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 group">
                             <button className="px-6 py-2 bg-black text-white rounded-[10px] flex gap-3 items-center group-hover:bg-black/80 transition-all duration-300">
-                                Learn more <FaArrowRight
+                                Ko'proq bilish <FaArrowRight
                                     className="ml-1 group-hover:translate-x-1 transition-transform duration-300"
                                     style={{
                                         background: "linear-gradient(to right, #00F0FF, #5200FF, #FF2DF7)",

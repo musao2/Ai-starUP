@@ -39,10 +39,10 @@ function Contact() {
 
                   <div className="flex-1 space-y-3">
                     <p className="text-xs md:text-sm leading-relaxed md:leading-loose transition-opacity duration-300 hover:opacity-80">
-                      It&apos;s all about getting your message in front of the right audience and creating those valuable relationships. Learn more about how DOML can help you do just that - all with a simple, easy-to-use platform.
+                      CodesAi mening kodlash ish oqimini butunlay o'zgartirdi. Full-stack ishlanuvchi sifatida, men xatolarni tuzatish va yechimlarni qidirish uchun soatlarni sarflardim. Endi AI yordami bilan murakkab dasturlash savollariga tez javoblar, kod takliflar va eng yaxshi amaliyotlarni olaman. Bu 24/7 mavjud bo'lgan mutaxassis dasturchiga o'xshaydi. Mening mahsuldorligim kamida 300% ga oshdi va kod sifati sezilarli darajada yaxshilandi. Har qanday ishlanuvchi uchun tavsiya etaman!
                     </p>
-                    <h2 className="mt-4 text-4xl md:text-5xl font-bold transition-all duration-300 hover:scale-105 hover:text-transparent hover:bg-gradient-to-r hover:from-[#00F0FF] hover:to-[#FF2DF7] hover:bg-clip-text">Amaka Micheal</h2>
-                    <p className="mt-1 text-xl text-white/90 transition-colors duration-300">Media Executive, Buying &amp; Control</p>
+                    <h2 className="mt-4 text-4xl md:text-5xl font-bold transition-all duration-300 hover:scale-105 hover:text-transparent hover:bg-gradient-to-r hover:from-[#00F0FF] hover:to-[#FF2DF7] hover:bg-clip-text">Alex Johnson</h2>
+                    <p className="mt-1 text-xl text-white/90 transition-colors duration-300">Katta Full-Stack Ishlanuvchi</p>
 
                     <div className="mt-4 inline-flex items-center gap-3 text-lg transition-transform duration-300 hover:translate-x-2">
                       <FaDiscord className="text-3xl text-[#7289DA] animate-bounce" />
