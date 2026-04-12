@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@keyframes footerTextReveal {
+  0% { opacity: 0; transform: translateY(10px) scale(0.98); color: rgba(255,255,255,0.7); }
+  50% { opacity: 0.6; transform: translateY(4px) scale(1.02); color: rgba(255,255,255,0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); color: rgba(255,255,255,1); }
+}
+
+.footer-text-animate {
+  animation: footerTextReveal 0.75s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.08s;
+}
