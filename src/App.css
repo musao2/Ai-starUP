@@ -1,0 +1,8 @@
+.answer-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.answer-container::-webkit-scrollbar-thumb {
+  background: #00f0ff;
+  border-radius: 10px;
+}

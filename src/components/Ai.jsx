@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Send, Sparkles } from "lucide-react";
+import "../App.css";
 
 export default function Ai() {
   const [question, setQuestion] = useState("");
@@ -17,6 +18,67 @@ export default function Ai() {
   const validateApiKey = (key) => {
     // Google API kalitlari odatda AIza... bilan boshlanadi
     return key && key.startsWith('AIza') && key.length > 30;
+  };
+
+  // Code blocklarni format qilish funksiyasi
+  const formatCodeBlocks = (text) => {
+    // ```language kod ``` formatini topish
+    const codeBlockRegex = /```(\w+)?\n?([\s\S]*?)```/g;
+
+    return text.replace(codeBlockRegex, (match, language, code) => {
+      const lang = language || 'javascript';
+      const highlightedCode = code.trim();
+
+      returnreturn`<div class="code-block-container" style="overflow-x:auto; background:#0f0f0f; border-radius:10px; margin:10px 0;">
+  <div class="code-block-header" style="display:flex; justify-content:space-between; padding:8px 12px; color:#00f0ff;">
+    <span class="code-language">${lang}</span>
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${highlightedCode.replace(/`/g, '\\`')}\`)">📋</button>
+  </div>
+
+  <pre class="code-block" style="padding:12px; overflow-x:auto;">
+    <code class="language-${lang}" style="white-space:pre;">
+${highlightedCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}
+    </code>
+  </pre>
+</div>`;
+    });
+  };
+
+  // Markdown linklarni HTML ga aylantirish
+  const formatMarkdown = (text) => {
+    let formatted = text;
+
+    // **bold** ni <strong> ga
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // *italic* ni <em> ga
+    formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+    // `inline code` ni <code> ga
+    formatted = formatted.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
+
+    // ## Sarlavhalar
+    formatted = formatted.replace(/^## (.*$)/gm, '<h3 class="section-title">$1</h3>');
+    formatted = formatted.replace(/^### (.*$)/gm, '<h4 class="subsection-title">$1</h4>');
+
+    // - Ro'yxat elementlari
+    formatted = formatted.replace(/^- (.*$)/gm, '<li class="list-item">$1</li>');
+
+    // Bo'limlarni div ga o'rash
+    formatted = formatted.replace(/(<li class="list-item">.*<\/li>\n?)+/g, '<ul class="feature-list">$&</ul>');
+
+    return formatted;
+  };
+
+  // Javobni format qilish
+  const formatAnswer = (text) => {
+    let formatted = formatMarkdown(text);
+    formatted = formatCodeBlocks(formatted);
+
+    // Qator tashlashlarni <br> ga
+    formatted = formatted.replace(/\n/g, '<br>');
+
+    return formatted;
   };
 
   // 🔥 AI FUNKSIYASI - ISHLAYDIGAN YECHIM
@@ -476,15 +538,18 @@ Men sizga batafsil javob beraman! 🚀`;
         {/* OUTPUT BOX */}
         {answer && (
           <div
-            className="mb-8 p-5 rounded-xl text-white"
+            className="mb-8 p-5 rounded-xl text-white answer-container"
             style={{
               backgroundColor: "rgba(0,0,0,0.7)",
               border: "1px solid rgba(0,240,255,0.2)",
               boxShadow: "0 0 20px rgba(82,0,255,0.15)",
+
+              height: "60vh",        // 🔥 FIXED HEIGHT
+              overflowY: "auto",     // 🔥 SCROLL VERTICAL
+              overflowX: "hidden",
             }}
-          >
-            {answer}
-          </div>
+            dangerouslySetInnerHTML={{ __html: formatAnswer(answer) }}
+          />
         )}
 
         {/* Suggestions */}
